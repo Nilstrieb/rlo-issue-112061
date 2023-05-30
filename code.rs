@@ -14,7 +14,7 @@ pub unsafe fn fn12_rs() {
         loop { // only runs once, but necessary
             match *v12 {
                 197 => {
-                    let mut match_condition: u64 = 13978819448286864680_u64;
+                    let mut match_condition: u64 = 0;
                     let mut v33: *mut bool = core::ptr::addr_of_mut!(bool_storage);
                     let mut key_read: (bool, u8) = (false, 0);
                     let mut v39: (usize, [u32; 6]) = (0, [0; 6]);
@@ -26,7 +26,7 @@ pub unsafe fn fn12_rs() {
                         loop {
                             let v21 = *v20_ptr;
                             match match_condition {
-                                13978819448286864680 => {
+                                0 => {
                                     // Taken
                                     v39.1 = [2262110980_u32; 6];
                                     match_condition = 2;
