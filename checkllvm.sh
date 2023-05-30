@@ -9,8 +9,9 @@ d=$(mktemp -d)
 clang $1 helper.c -O1 -o "$d/good"
 clang $1 helper.c -O2 -o "$d/bad"
 
-bad=$("$d/bad")
-good=$("$d/good")
+# Thanks to set -e, we abort if it times out.
+bad=$(timeout 1 "$d/bad")
+good=$(timeout 1 "$d/good")
 
 if [ "$good" != "$bad" ]; then
     echo "MISCOMPILATION"
