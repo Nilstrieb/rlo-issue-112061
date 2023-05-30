@@ -3,8 +3,7 @@ pub fn print_var(v: u8) {
     println!("{v}");
 }
 pub unsafe fn fn12_rs() {
-    let mut v2: bool = false;
-    let mut v8: u64;
+    let mut bool_storage: bool = false;
     let mut v9: usize = 0;
 
     'l0: loop {
@@ -15,9 +14,9 @@ pub unsafe fn fn12_rs() {
         loop { // only runs once, but necessary
             match *v12 {
                 197 => {
-                    v8 = 13978819448286864680_u64;
-                    let mut v33: *mut bool = core::ptr::addr_of_mut!(v2);
-                    let mut v31: (bool, u8) = (false, 0);
+                    let mut match_condition: u64 = 13978819448286864680_u64;
+                    let mut v33: *mut bool = core::ptr::addr_of_mut!(bool_storage);
+                    let mut key_read: (bool, u8) = (false, 0);
                     let mut v39: (usize, [u32; 6]) = (0, [0; 6]);
 
                     // Taken
@@ -26,21 +25,21 @@ pub unsafe fn fn12_rs() {
                         (*v12) = 22; // What Miri prints
                         loop {
                             let v21 = *v20_ptr;
-                            match v8 {
+                            match match_condition {
                                 13978819448286864680 => {
                                     // Taken
                                     v39.1 = [2262110980_u32; 6];
-                                    v8 = 2;
+                                    match_condition = 2;
                                     v39.0 = 6;
                                     let v17 = v33;
-                                    v33 = core::ptr::addr_of_mut!(v31.0);
-                                    v31.1 = *v12;
+                                    v33 = core::ptr::addr_of_mut!(key_read.0);
+                                    key_read.1 = *v12;
                                     (*v17) = true;
                                     (*v20_ptr) = v21;
                                     match v39.0 {
                                         6 => {
                                             // Taken
-                                            print_var(v31.1);
+                                            print_var(key_read.1);
                                         }
                                         0 => continue 'l2,
                                         _ => return,
