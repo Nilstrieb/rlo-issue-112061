@@ -10,8 +10,9 @@ pub unsafe fn fn12_rs() {
     let mut v21: [u8; 8];
     let mut v31: (bool, u8, usize, f32) = Default::default();
     let mut v33: ([u128; 7], *mut i8, *mut bool) = ([0; 7], ptr::null_mut(), ptr::null_mut());
-    let mut v39: (usize, [u128; 7], ([u32; 6], usize, *mut [u32; 6])) =
-        (0, [0; 7], ([0; 6], 0, ptr::null_mut()));
+    
+    let mut v39_0: usize = 0;
+    let mut v39_2: ([u32; 6], usize, *mut [u32; 6]) = ([0; 6], 0, ptr::null_mut());
 
     let ret: *mut bool = core::ptr::addr_of_mut!(v2);
     'l0: loop {
@@ -25,7 +26,7 @@ pub unsafe fn fn12_rs() {
                     // Taken
                     v8 = 13978819448286864680_u64;
                     v33.2 = ret;
-                    match v39.0 {
+                    match v39_0 {
                         0 => {
                             // Taken
                             'l2: loop {
@@ -36,15 +37,15 @@ pub unsafe fn fn12_rs() {
                                     match v8 {
                                         13978819448286864680 => {
                                             // Taken
-                                            v39.2 .0 = [2262110980_u32; 6];
+                                            v39_2 .0 = [2262110980_u32; 6];
                                             v8 = 2;
-                                            v39.0 = 6;
+                                            v39_0 = 6;
                                             v17 = v33.2;
                                             v33.2 = core::ptr::addr_of_mut!(v31.0);
                                             v31.1 = *v12;
                                             (*v17) = true;
                                             (*v20_ptr) = v21;
-                                            match v39.0 {
+                                            match v39_0 {
                                                 6 => {
                                                     // Taken
                                                     print_var(v31.1);
