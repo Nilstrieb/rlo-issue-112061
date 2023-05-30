@@ -6,10 +6,6 @@ pub unsafe fn fn12_rs() {
     let mut v2: bool = false;
     let mut v8: u64;
     let mut v9: usize = 0;
-    let mut v31: (bool, u8, usize, f32) = Default::default();
-    let mut v33: ([u128; 7], *mut i8, *mut bool) = ([0; 7], ptr::null_mut(), ptr::null_mut());
-    let mut v39: (usize, [u128; 7], ([u32; 6], usize, *mut [u32; 6])) =
-        (0, [0; 7], ([0; 6], 0, ptr::null_mut()));
 
     'l0: loop {
         let mut v20 = [197_u8; 8];
@@ -21,7 +17,14 @@ pub unsafe fn fn12_rs() {
                 197 => {
                     // Taken
                     v8 = 13978819448286864680_u64;
+                    let mut v33: ([u128; 7], *mut i8, *mut bool) =
+                        ([0; 7], ptr::null_mut(), ptr::null_mut());
                     v33.2 = core::ptr::addr_of_mut!(v2);
+
+                    let mut v31: (bool, u8, usize, f32) = Default::default();
+
+                    let mut v39: (usize, [u128; 7], ([u32; 6], usize, *mut [u32; 6])) =
+                        (0, [0; 7], ([0; 6], 0, ptr::null_mut()));
 
                     // Taken
                     'l2: loop {
