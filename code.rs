@@ -4,12 +4,12 @@ pub fn print_var(v: u8) {
 }
 pub unsafe fn fn12_rs() -> ([u128; 7], *mut i8, *mut bool) {
     let mut v2: bool = false;
-    let mut v8: u64 = 0;
+    let mut v8: u64;
     let mut v9: usize = 0;
-    let mut v12: *mut u8 = ptr::null_mut();
-    let mut v17: *mut bool = ptr::null_mut();
-    let mut v20: [u8; 8] = Default::default();
-    let mut v21: [u8; 8] = Default::default();
+    let mut v12: *mut u8;
+    let mut v17: *mut bool;
+    let mut v20: [u8; 8];
+    let mut v21: [u8; 8];
     let mut v31: (bool, u8, usize, f32) = Default::default();
     let mut v33: ([u128; 7], *mut i8, *mut bool) = ([0; 7], ptr::null_mut(), ptr::null_mut());
     let mut v39: (usize, [u128; 7], ([u32; 6], usize, *mut [u32; 6]), [u32; 2]) =
@@ -21,7 +21,7 @@ pub unsafe fn fn12_rs() -> ([u128; 7], *mut i8, *mut bool) {
         let v20_ptr = ptr::addr_of_mut!(v20);
         v12 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
         v9 = 2_usize;
-        'l1: loop {
+        loop {
             match *v12 {
                 197 => {
                     // Taken
@@ -33,7 +33,7 @@ pub unsafe fn fn12_rs() -> ([u128; 7], *mut i8, *mut bool) {
                             'l2: loop {
                                 (*v20_ptr) = [11_u8; 8]; // What LLVM with low mir-opt prints
                                 (*v12) = 22; // What Miri prints
-                                'l3: loop {
+                                loop {
                                     v21 = *v20_ptr;
                                     match v8 {
                                         13978819448286864680 => {
