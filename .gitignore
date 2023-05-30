@@ -2,6 +2,7 @@
 /bad
 *.ll
 *.s
+*.bc
 a.out
 
 # Added by cargo

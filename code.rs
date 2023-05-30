@@ -19,7 +19,7 @@ pub unsafe extern "C" fn fn12_rs() {
     'l0: loop {
         let mut v20 = [197_u8; 8];
         let v20_ptr = ptr::addr_of_mut!(v20);
-        let mut v12: *mut u8 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
+        let mut v12: *mut u8 = v20_ptr.cast::<u8>().add(v9);
         v9 = 2_usize; // unused but necessary write
         loop {
             // only runs once, but necessary
@@ -64,7 +64,7 @@ pub unsafe extern "C" fn fn12_rs() {
                 }
                 _ => {
                     // Dead code but necessary
-                    v12 = core::ptr::addr_of_mut!((*v20_ptr)[2]);
+                    v12 = (*v20_ptr).as_mut_ptr().add(2);
                 }
             }
         }
