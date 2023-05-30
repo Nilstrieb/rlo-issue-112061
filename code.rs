@@ -28,7 +28,7 @@ pub unsafe fn fn12_rs() {
                             match match_condition {
                                 0 => {
                                     // Taken
-                                    v39.1 = [2262110980_u32; 6];
+                                    v39.1 = [1; 6];
                                     match_condition = 2;
                                     v39.0 = 6;
                                     let v17 = v33;
