@@ -25,36 +25,35 @@ pub unsafe fn fn12_rs() {
                     // Taken
                     v8 = 13978819448286864680_u64;
                     v33.2 = ret;
-                    {
-                        // Taken
-                        'l2: loop {
-                            (*v20_ptr) = [11_u8; 8]; // What LLVM with low mir-opt prints
-                            (*v12) = 22; // What Miri prints
-                            loop {
-                                v21 = *v20_ptr;
-                                match v8 {
-                                    13978819448286864680 => {
-                                        // Taken
-                                        v39.2 .0 = [2262110980_u32; 6];
-                                        v8 = 2;
-                                        v39.0 = 6;
-                                        v17 = v33.2;
-                                        v33.2 = core::ptr::addr_of_mut!(v31.0);
-                                        v31.1 = *v12;
-                                        (*v17) = true;
-                                        (*v20_ptr) = v21;
-                                        match v39.0 {
-                                            6 => {
-                                                // Taken
-                                                print_var(v31.1);
-                                            }
-                                            0 => continue 'l2,
-                                            _ => return,
+
+                    // Taken
+                    'l2: loop {
+                        (*v20_ptr) = [11_u8; 8]; // What LLVM with low mir-opt prints
+                        (*v12) = 22; // What Miri prints
+                        loop {
+                            v21 = *v20_ptr;
+                            match v8 {
+                                13978819448286864680 => {
+                                    // Taken
+                                    v39.2 .0 = [2262110980_u32; 6];
+                                    v8 = 2;
+                                    v39.0 = 6;
+                                    v17 = v33.2;
+                                    v33.2 = core::ptr::addr_of_mut!(v31.0);
+                                    v31.1 = *v12;
+                                    (*v17) = true;
+                                    (*v20_ptr) = v21;
+                                    match v39.0 {
+                                        6 => {
+                                            // Taken
+                                            print_var(v31.1);
                                         }
+                                        0 => continue 'l2,
+                                        _ => return,
                                     }
-                                    2 => return,
-                                    _ => continue 'l0,
                                 }
+                                2 => return,
+                                _ => continue 'l0,
                             }
                         }
                     }
