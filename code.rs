@@ -1,4 +1,5 @@
 use std::ptr;
+#[inline(never)]
 pub fn print_var(v: u8) {
     println!("{v}");
 }
