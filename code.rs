@@ -6,8 +6,6 @@ pub unsafe fn fn12_rs() {
     let mut v2: bool = false;
     let mut v8: u64;
     let mut v9: usize = 0;
-    let mut v17: *mut bool;
-    let mut v21: [u8; 8];
     let mut v31: (bool, u8, usize, f32) = Default::default();
     let mut v33: ([u128; 7], *mut i8, *mut bool) = ([0; 7], ptr::null_mut(), ptr::null_mut());
     let mut v39: (usize, [u128; 7], ([u32; 6], usize, *mut [u32; 6])) =
@@ -31,14 +29,14 @@ pub unsafe fn fn12_rs() {
                         (*v20_ptr) = [11_u8; 8]; // What LLVM with low mir-opt prints
                         (*v12) = 22; // What Miri prints
                         loop {
-                            v21 = *v20_ptr;
+                            let v21 = *v20_ptr;
                             match v8 {
                                 13978819448286864680 => {
                                     // Taken
                                     v39.2 .0 = [2262110980_u32; 6];
                                     v8 = 2;
                                     v39.0 = 6;
-                                    v17 = v33.2;
+                                    let v17 = v33.2;
                                     v33.2 = core::ptr::addr_of_mut!(v31.0);
                                     v31.1 = *v12;
                                     (*v17) = true;
