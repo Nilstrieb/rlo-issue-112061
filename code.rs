@@ -57,7 +57,7 @@ pub unsafe fn fn12_rs() {
                     }
                 }
                 _ => {
-                    v12 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
+                    v12 = core::ptr::addr_of_mut!((*v20_ptr)[2]);
                 }
             }
         }
