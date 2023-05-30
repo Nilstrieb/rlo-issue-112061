@@ -1,9 +1,18 @@
 use std::ptr;
-#[inline(never)]
-pub fn print_var(v: u8) {
-    println!("{v}");
+
+extern "C" {
+    pub fn print_var(v: u8);
 }
-pub unsafe fn fn12_rs() {
+#[cfg(pure_rust)]
+mod impl_ {
+    #[no_mangle]
+    pub extern "C" fn print_var(v: u8) {
+        println!("{v}");
+    }
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn fn12_rs() {
     let mut bool_storage: bool = false;
     let mut v9: usize = 0;
 
@@ -12,7 +21,8 @@ pub unsafe fn fn12_rs() {
         let v20_ptr = ptr::addr_of_mut!(v20);
         let mut v12: *mut u8 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
         v9 = 2_usize; // unused but necessary write
-        loop { // only runs once, but necessary
+        loop {
+            // only runs once, but necessary
             match *v12 {
                 197 => {
                     let mut match_condition: u64 = 0;
@@ -60,7 +70,9 @@ pub unsafe fn fn12_rs() {
         }
     }
 }
-pub fn main() {
+
+#[cfg(pure_rust)]
+fn main() {
     unsafe {
         fn12_rs();
     }

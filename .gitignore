@@ -1,5 +1,8 @@
 /good
 /bad
+*.ll
+*.s
+a.out
 
 # Added by cargo
 
