@@ -17,7 +17,7 @@ pub unsafe fn fn12_rs() {
                 197 => {
                     v8 = 13978819448286864680_u64;
                     let mut v33: *mut bool = core::ptr::addr_of_mut!(v2);
-                    let mut v31: (bool, u8, usize, f32) = Default::default();
+                    let mut v31: (bool, u8) = (false, 0);
                     let mut v39: (usize, [u32; 6]) = (0, [0; 6]);
 
                     // Taken
