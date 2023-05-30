@@ -22,8 +22,7 @@ pub unsafe fn fn12_rs() {
 
                     let mut v31: (bool, u8, usize, f32) = Default::default();
 
-                    let mut v39: (usize, ([u32; 6], usize, *mut [u32; 6])) =
-                        (0, ([0; 6], 0, ptr::null_mut()));
+                    let mut v39: (usize, [u32; 6]) = (0, [0; 6]);
 
                     // Taken
                     'l2: loop {
@@ -34,7 +33,7 @@ pub unsafe fn fn12_rs() {
                             match v8 {
                                 13978819448286864680 => {
                                     // Taken
-                                    v39.1 .0 = [2262110980_u32; 6];
+                                    v39.1 = [2262110980_u32; 6];
                                     v8 = 2;
                                     v39.0 = 6;
                                     let v17 = v33.2;
