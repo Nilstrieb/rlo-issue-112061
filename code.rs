@@ -2,13 +2,11 @@ use std::ptr;
 pub fn print_var(v: u8) {
     println!("{v}");
 }
-pub unsafe fn fn12_rs() -> ([u128; 7], *mut i8, *mut bool) {
+pub unsafe fn fn12_rs() {
     let mut v2: bool = false;
     let mut v8: u64;
     let mut v9: usize = 0;
-    let mut v12: *mut u8;
     let mut v17: *mut bool;
-    let mut v20: [u8; 8];
     let mut v21: [u8; 8];
     let mut v31: (bool, u8, usize, f32) = Default::default();
     let mut v33: ([u128; 7], *mut i8, *mut bool) = ([0; 7], ptr::null_mut(), ptr::null_mut());
@@ -17,9 +15,9 @@ pub unsafe fn fn12_rs() -> ([u128; 7], *mut i8, *mut bool) {
     let mut ret: ([u128; 7], *mut i8, *mut bool) = ([0; 7], ptr::null_mut(), ptr::null_mut());
     ret.2 = core::ptr::addr_of_mut!(v2);
     'l0: loop {
-        v20 = [197_u8; 8];
+        let mut v20 = [197_u8; 8];
         let v20_ptr = ptr::addr_of_mut!(v20);
-        v12 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
+        let mut v12 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
         v9 = 2_usize;
         loop {
             match *v12 {
@@ -52,22 +50,22 @@ pub unsafe fn fn12_rs() -> ([u128; 7], *mut i8, *mut bool) {
                                                     print_var(v31.1);
                                                 }
                                                 0 => continue 'l2,
-                                                _ => return ret,
+                                                _ => return,
                                             }
                                         }
-                                        2 => return ret,
+                                        2 => return,
                                         _ => continue 'l0,
                                     }
                                 }
                             }
                         }
-                        _ => return ret,
+                        _ => return,
                     }
                 }
                 4 => {
                     v12 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
                 }
-                _ => return ret,
+                _ => return,
             }
         }
     }
