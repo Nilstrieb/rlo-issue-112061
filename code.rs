@@ -11,14 +11,13 @@ pub unsafe fn fn12_rs() {
         let mut v20 = [197_u8; 8];
         let v20_ptr = ptr::addr_of_mut!(v20);
         let mut v12: *mut u8 = core::ptr::addr_of_mut!((*v20_ptr)[v9]);
-        v9 = 2_usize;
+        v9 = 2_usize; // unused but necessary write
         loop {
             match *v12 {
                 197 => {
                     // Taken
                     v8 = 13978819448286864680_u64;
-                    let mut v33: ([u128; 7], *mut i8, *mut bool) =
-                        ([0; 7], ptr::null_mut(), core::ptr::addr_of_mut!(v2));
+                    let mut v33: *mut bool = core::ptr::addr_of_mut!(v2);
 
                     let mut v31: (bool, u8, usize, f32) = Default::default();
 
@@ -36,8 +35,8 @@ pub unsafe fn fn12_rs() {
                                     v39.1 = [2262110980_u32; 6];
                                     v8 = 2;
                                     v39.0 = 6;
-                                    let v17 = v33.2;
-                                    v33.2 = core::ptr::addr_of_mut!(v31.0);
+                                    let v17 = v33;
+                                    v33 = core::ptr::addr_of_mut!(v31.0);
                                     v31.1 = *v12;
                                     (*v17) = true;
                                     (*v20_ptr) = v21;
