@@ -1,0 +1,75 @@
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+define internal ptr @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$3add17haa2a2aeb0237f158E"(ptr %self, i64 %count) {
+start:
+  %0 = getelementptr i8, ptr %self, i64 %count
+  ret ptr %0
+}
+
+define void @fn12_rs(ptr %0, ptr %v20) {
+start:
+  %v39 = alloca { i64, [6 x i32] }, align 8
+  %v201 = alloca [8 x i8], align 8
+  br label %bb1
+
+bb1:                                              ; preds = %bb8, %start
+  %_7 = phi i64 [ 1, %bb8 ], [ 0, %start ]
+  store i64 -4195730024608447035, ptr %v201, align 8
+  %1 = call ptr @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$3add17haa2a2aeb0237f158E"(ptr %v201, i64 %_7)
+  br label %bb4
+
+bb4:                                              ; preds = %bb5, %bb1
+  %2 = phi ptr [ %_19, %bb5 ], [ %1, %bb1 ]
+  %3 = phi ptr [ null, %bb5 ], [ %1, %bb1 ]
+  %4 = load i8, ptr %3, align 1
+  %5 = icmp eq i8 %4, -59
+  br i1 %5, label %bb7, label %bb5
+
+bb5:                                              ; preds = %bb4
+  %_19 = call ptr @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$3add17haa2a2aeb0237f158E"(ptr %v201, i64 1)
+  br label %bb4
+
+bb7:                                              ; preds = %repeat_loop_next, %bb4
+  %.pre = phi i64 [ 1, %repeat_loop_next ], [ 0, %bb4 ]
+  store i8 0, ptr %3, align 1
+  br label %bb8
+
+bb8:                                              ; preds = %bb10, %bb7
+  %6 = phi i64 [ 2, %bb10 ], [ %.pre, %bb7 ]
+  %7 = load i64, ptr %v201, align 8
+  switch i64 %6, label %bb1 [
+    i64 0, label %repeat_loop_header
+    i64 2, label %bb13
+  ]
+
+bb13:                                             ; preds = %repeat_loop_next, %bb8
+  ret void
+
+repeat_loop_header:                               ; preds = %repeat_loop_body, %bb8
+  %8 = phi ptr [ %9, %repeat_loop_body ], [ %v39, %bb8 ]
+  %.not = icmp eq ptr %8, %v39
+  br i1 %.not, label %repeat_loop_next, label %repeat_loop_body
+
+repeat_loop_body:                                 ; preds = %repeat_loop_header
+  %9 = getelementptr i32, ptr %8, i64 1
+  br label %repeat_loop_header
+
+repeat_loop_next:                                 ; preds = %repeat_loop_header
+  store i64 6, ptr %v39, align 8
+  %v17 = load ptr, ptr %v20, align 8
+  %_16 = load i8, ptr %2, align 1
+  store i8 0, ptr %v17, align 1
+  store i64 %7, ptr %v20, align 8
+  %10 = load i64, ptr %v39, align 8
+  switch i64 %10, label %bb13 [
+    i64 6, label %bb10
+    i64 0, label %bb7
+  ]
+
+bb10:                                             ; preds = %repeat_loop_next
+  call void @print_var(i8 %_16)
+  br label %bb8
+}
+
+declare void @print_var(i8)
